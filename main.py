@@ -1,13 +1,7 @@
-import os
-import json
-import urllib
-import http.client
-import uritemplate
 import datetime
 import telebot
 from telebot import types
 import requests
-from requests import get
 from supabase import create_client, Client
 from dotenv import load_dotenv
 
