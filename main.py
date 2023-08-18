@@ -44,7 +44,6 @@ k = 0
 k1 = 1
 current_date = str(datetime.datetime.now().strftime('%Y-%m-%d'))
 
-
 @bot.message_handler(commands=['send_photos'])
 def send_photos(message):
     global k1, current_date
@@ -391,7 +390,8 @@ def all(message):
                                                     "passport exp. date": f"{pass_exp_date}",
                                                     "phone code": f"{phone_code}",
                                                     "phone number": f"{phone_num}",
-                                                    "email": f"{email_cl}"
+                                                    "email": f"{email_cl}",
+                                                    "ya_link": "https://disk.yandex.ru/d/obL0b1MFwRfrTg"
                                                    }).execute()
 
 
@@ -643,7 +643,8 @@ def again_f(message):
     if message.text == '✉️Создать заявку':
         start_2(message)
     else:
-        bot.send_message(message.chat.id, 'Finish')
+        markup_end = types.ReplyKeyboardRemove()
+        bot.send_message(message.chat.id, 'Finish', reply_markup=markup_end)
 
 
 
